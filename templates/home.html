@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    {% if request.user.is_authenticated %}
+        <h2>Hi, {{ request.user|title }}!</h2>
+        <a href="{% url 'logout' %}">Log out</a>
+    {% else %}
+        <a href="{% url 'login' %}">Log in</a>
+    {% endif %}
+</div>
+
+<div class="list-title">
+    <h1>My Shopping List</h1>
+    <a href="{% url 'item_new' %}">Add a new item to your list</a>
+</div>
+
+<div class="items-wrapper">
+    {% for item in items %}
+    <div class="item-wrapper">
+        {% if item.complete %}
+        <div class="item-title">
+            <s><a href="{% url 'item_detail' item.pk %}">{{ item }}</a></s>
+        </div>
+        <div class="ed-del">
+            <a href="{% url 'item_edit' item.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="delete-link" href="{% url 'item_delete' item.pk %}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+                
+        {% else %}
+        <div class="item-title">
+            <a href="{% url 'item_detail' item.pk %}">{{ item }}</a>
+        </div>
+        <div class="ed-del">
+            <a href="{% url 'item_edit' item.pk %}"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="delete-link" href="{% url 'item_delete' item.pk %}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+
+        {% endif %}
+    </div>
+
+    {% empty %}
+    <h3>There are no items in your list</h3>
+    {% endfor %}
+</div>
+{% endblock content %}

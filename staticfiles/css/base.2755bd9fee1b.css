@@ -1,0 +1,112 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+    padding-top: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: greenyellow;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+a, a:visited, a:active {
+    color: dodgerblue;
+    text-decoration: none; 
+}
+
+.header a {
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    color: blue;
+}
+
+.list-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: greenyellow;
+}
+
+.container{
+    max-width: 500px;
+    min-height: 600px;
+    margin: auto;
+    background-color: white;
+    -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.item-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    border-top: 1px solid grey;
+}
+
+.ed-del {
+    min-width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-trash {
+    color: red;
+}
+.fa-cart-plus {
+    color: greenyellow;
+}
+
+.fa-cart-minus {
+    color: red;
+}
+
+
+input[type=text],
+input[type=password],
+textarea {
+    border: 1px solid #757575;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+}
+
+label {
+    padding-top: 10px !important;
+    display: block;
+}
+
+::placeholder {
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+.button {
+    display: block;
+    width: 25%;
+    margin: 1em auto;
+    border: 1px solid #757575;
+    background-color: #FFF;
+    background-color: greenyellow;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-body {
+    padding: 20px;
+}

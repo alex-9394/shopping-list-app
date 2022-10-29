@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <a href="{% url 'home' %}">&#8592; Go back</a>
+    <h2>Add a new shopping item</h2>
+</div>
+
+<div class="form-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

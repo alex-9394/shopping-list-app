@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="header">
+    <a href="{% url 'home' %}">&#8592; Go back</a>
+    <h2>Details</h2>
+</div>
+<div class="form-body">
+    <h3><u>Item</u>:<br>{{ item }}</h3>
+    <p><u><b>Details</b></u>:<br>{{ item.description }}</p>
+</div>
+{% endblock content %}
